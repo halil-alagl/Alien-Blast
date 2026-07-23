@@ -1,24 +1,20 @@
 #include <SFML/Graphics.hpp>
-#include "Bullet.hpp"
-class Bullet {
-public:
-    sf::RectangleShape shape;
-    sf::Vector2f velocity;
+#include "../include/Bullet.hpp"
 
-    Bullet(sf::Vector2f position, sf::Vector2f direction) {
-        shape.setSize({ 8.f, 8.f });
-        shape.setFillColor(sf::Color::Yellow);
-        shape.setPosition(position);
+// Implement the constructor using the Bullet:: scope
+Bullet::Bullet(sf::Vector2f position, sf::Vector2f direction) {
+    shape.setSize({ 3.f, 8.f });
+    shape.setFillColor(sf::Color::White);
+    shape.setPosition(position);
 
-        float speed = 600.f;
-        velocity = direction * speed;
-    }
+    float speed = 5.f;
+    velocity = direction * speed;
+}
 
-    void update(float dt) {
-        shape.move(velocity * dt);
-    }
+void Bullet::update(float dt) {
+    shape.move(velocity * dt);
+}
 
-    void draw(sf::RenderWindow& window) {
-        window.draw(shape);
-    }
-};
+void Bullet::draw(sf::RenderWindow& window) {
+    window.draw(shape);
+}
