@@ -1,7 +1,7 @@
 #include <SFML/Graphics.hpp>
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode({ 640, 360 }), "Star Chaser");
+    sf::RenderWindow window(sf::VideoMode({ 640, 360 }), "Alien-Blast");
     //sf::RectangleShape player({ 30.f, 40.f });
     sf::Texture texture("player.png", false, sf::IntRect({ 0, 0 }, { 32, 32 })); // Throws sf::Exception if an error occurs  
     sf::Sprite player(texture);
