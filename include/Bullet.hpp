@@ -1,5 +1,6 @@
 #include <SFML/Graphics.hpp>
 class Bullet {
+    static constexpr float bulletWidth = 3.f; // Define bulletWidth as a static constant
 public:
     sf::RectangleShape shape;
     sf::Vector2f velocity;
