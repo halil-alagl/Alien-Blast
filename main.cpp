@@ -1,9 +1,11 @@
 #include <SFML/Graphics.hpp>
 
 int main() {
-    sf::RenderWindow window(sf::VideoMode({ 800, 600 }), "Star Chaser");
-    sf::RectangleShape player({ 30.f, 40.f });
-    player.setPosition({ 400.f, 550.f });
+    sf::RenderWindow window(sf::VideoMode({ 640, 360 }), "Star Chaser");
+    //sf::RectangleShape player({ 30.f, 40.f });
+    sf::Texture texture("player.png", false, sf::IntRect({ 0, 0 }, { 32, 32 })); // Throws sf::Exception if an error occurs  
+    sf::Sprite player(texture);
+    player.setPosition({ 320.f, 180.f });
 
     while (window.isOpen()) {
         while (const std::optional event = window.pollEvent()) {
