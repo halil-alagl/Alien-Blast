@@ -56,12 +56,17 @@ int main() {
         }
         window.clear();
         window.draw(player);
-
+        // Remove bullets that are off-screen
+        bullets.erase(
+            std::remove_if(bullets.begin(), bullets.end(), [](const Bullet& bullet) {
+                return bullet.isOffScreen();
+                }),
+            bullets.end()
+        );
         for (auto& bullet : bullets) {
             bullet.update(0.016f);
             bullet.draw(window);
         }
-
         window.display();
     }
 }
